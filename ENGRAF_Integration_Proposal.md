@@ -6,8 +6,8 @@
 
 This document outlines an integration between two complementary AI projects:
 
-1. **Small-LLM**: A BPE-trained transformer model achieving exceptional performance (loss 0.1447) on 1975 PhD dissertation text about vector embeddings and semantic spaces
-2. **ENGRAF**: A modern Python implementation of the 1975 "N-Space Model for Visual and Verbal Concepts" using semantic vectors, ATN parsing, and VPython 3D rendering
+1. **Small-LLM**: (https://github.com/jeffeastman-2/Small-LLM) A BPE-trained transformer model achieving exceptional performance (loss 0.0020 train/0.0017 validation) on 1975 PhD dissertation text about vector embeddings and semantic spaces
+2. **ENGRAF**: (https://github.com/jeffeastman-2/Engraf) A modern Python implementation of the 1975 "N-Space Model for Visual and Verbal Concepts" using semantic vectors, ATN parsing, and VPython 3D rendering
 
 The integration would create a complete implementation of the original 1975 vision: natural language understanding that generates 3D visual scenes through semantic vector transformations.
 
@@ -21,7 +21,7 @@ The integration would create a complete implementation of the original 1975 visi
 - **Reception**: "Too early" - rejected from ACL proceedings despite being 50 years ahead of its time
 
 ### The 2025 Reality
-- **Small-LLM**: BPE transformer trained on the original dissertation text (loss 0.1447 = exceptional predictive accuracy)
+- **Small-LLM**: BPE transformer trained on the original dissertation text (loss 0.0020 train/0.0017 validation = outstanding generalization)
 - **ENGRAF**: Complete implementation with 43-dimensional semantic vectors, ATN parsing, and VPython rendering
 - **Opportunity**: Combine learned language understanding with structured semantic representation
 
@@ -308,7 +308,7 @@ The integration of Small-LLM and ENGRAF represents an interesting opportunity to
 4. **Explore patterns** for neural-symbolic integration
 5. **Provide a case study** of AI concept evolution from theory to practice
 
-The strong performance of the BPE model (loss 0.1447) trained on the original dissertation text, combined with ENGRAF's semantic vector implementation, creates an opportunity to realize the complete original vision with modern tools and techniques.
+The outstanding performance of the BPE model (loss 0.0020 train/0.0017 validation) trained on the original dissertation text, combined with ENGRAF's semantic vector implementation, creates an opportunity to realize the complete original vision with modern tools and techniques.
 
 This integration would serve as both a **technical exploration** and a **historical connection** to foundational work that anticipated core principles underlying today's AI systems.
 
