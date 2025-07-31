@@ -11,6 +11,7 @@ This script demonstrates the complete training pipeline:
 
 import os
 import sys
+import torch
 from torch.utils.data import DataLoader
 
 # Add src to path
@@ -74,10 +75,15 @@ def main():
     print(f"   Encoded {len(encoded)} tokens")
     
     dataset = TextDataset(encoded, config['context_len'])
+    
+    # Smart pin_memory: only use when supported (CUDA, not MPS)
+    use_pin_memory = torch.cuda.is_available()
+    
     dataloader = DataLoader(
         dataset, 
         batch_size=config['batch_size'], 
-        shuffle=True
+        shuffle=True,
+        pin_memory=use_pin_memory
     )
     
     print(f"   Dataset size: {len(dataset)} samples")

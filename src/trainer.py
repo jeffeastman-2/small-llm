@@ -6,7 +6,6 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 from typing import Dict, List, Optional
-from .generation import generate, generate_from_string
 
 
 class Trainer:
@@ -19,7 +18,9 @@ class Trainer:
         model,
         dataloader: DataLoader,
         lr: float = 1e-4,
-        device: str = None
+        device: str = None,
+        patience: int = 20,
+        print_every: int = 10
     ):
         """
         Initialize trainer.
@@ -29,9 +30,13 @@ class Trainer:
             dataloader: Training data loader
             lr: Learning rate
             device: Device to use for training
+            patience: Early stopping patience
+            print_every: Print progress every N epochs
         """
         self.model = model
         self.dataloader = dataloader
+        self.patience = patience
+        self.print_every = print_every
         
         # Set device
         if device is None:
@@ -95,6 +100,87 @@ class Trainer:
         
         return total_loss / num_batches
     
+    def train_with_accumulation(self, dataloader, epochs: int, model_path: str, 
+                              accumulation_steps: int = 1, max_grad_norm: float = 1.0) -> float:
+        """
+        Train with gradient accumulation for larger effective batch sizes.
+        
+        Args:
+            dataloader: Training data loader
+            epochs: Number of epochs to train
+            model_path: Path to save best model
+            accumulation_steps: Number of steps to accumulate gradients
+            max_grad_norm: Maximum gradient norm for clipping
+        
+        Returns:
+            float: Best validation loss achieved
+        """
+        self.dataloader = dataloader
+        best_loss = float('inf')
+        
+        for epoch in range(epochs):
+            self.model.train()
+            total_loss = 0
+            num_batches = len(dataloader)
+            
+            # Reset gradients
+            self.optimizer.zero_grad()
+            
+            for batch_idx, (context, target) in enumerate(dataloader):
+                context, target = context.to(self.device), target.to(self.device)
+                
+                # Forward pass
+                logits = self.model(context)
+                loss = self.loss_fn(logits, target)
+                
+                # Scale loss by accumulation steps
+                loss = loss / accumulation_steps
+                
+                # Backward pass
+                loss.backward()
+                
+                # Update weights every accumulation_steps
+                if (batch_idx + 1) % accumulation_steps == 0 or batch_idx == num_batches - 1:
+                    # Gradient clipping
+                    torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=max_grad_norm)
+                    
+                    # Update weights
+                    self.optimizer.step()
+                    self.optimizer.zero_grad()
+                
+                total_loss += loss.item() * accumulation_steps  # Unscale for logging
+                
+                # Print progress
+                if batch_idx % (num_batches // 5 + 1) == 0:
+                    print(f"  Batch {batch_idx}/{num_batches}, Loss: {loss.item() * accumulation_steps:.4f}")
+            
+            avg_loss = total_loss / num_batches
+            
+            # Early stopping logic
+            if avg_loss < best_loss:
+                best_loss = avg_loss
+                self.epochs_since_improvement = 0
+                self.save_model(model_path)
+                print(f"Epoch {epoch+1}: New best loss {avg_loss:.4f} - Model saved!")
+            else:
+                self.epochs_since_improvement += 1
+                print(f"Epoch {epoch+1}: Loss {avg_loss:.4f} (no improvement for {self.epochs_since_improvement} epochs)")
+            
+            # Check for early stopping
+            if self.epochs_since_improvement >= self.patience:
+                print(f"Early stopping after {epoch+1} epochs")
+                break
+            
+            # Print epoch summary
+            if (epoch + 1) % self.print_every == 0:
+                print(f"Epoch {epoch+1}/{epochs} Summary:")
+                print(f"  Average Loss: {avg_loss:.4f}")
+                print(f"  Best Loss: {best_loss:.4f}")
+                print(f"  Device: {self.device}")
+                print("-" * 50)
+        
+        return best_loss
+
     def save_model(self, filepath: str) -> None:
         """Save model state dict."""
         torch.save(self.model.state_dict(), filepath)
@@ -163,24 +249,7 @@ class Trainer:
         self.model.eval()
         
         print("\n" + "="*50)
-        print("GENERATION SAMPLES:")
-        
-        # Generate from token sequence
-        print("\nFrom token sequence:")
-        sample1 = generate(
-            self.model, seed_tokens, idx2word, word2idx, 
-            steps=15, top_k=10
-        )
-        print(f"  {sample1}")
-        
-        # Generate from text prompt
-        print("\nFrom text prompt 'the model could':")
-        sample2 = generate_from_string(
-            self.model, "the model could", word2idx, idx2word, 
-            context_len=self.model.context_len, steps=15, top_k=10
-        )
-        print(f"  {sample2}")
-        
+        print("TRAINING COMPLETED")
         print("="*50 + "\n")
         
         self.model.train()

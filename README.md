@@ -165,3 +165,14 @@ The generation script provides an interactive interface with commands:
 - [ ] Model quantization and optimization for inference
 - [ ] Web interface for text generation
 - [ ] Fine-tuning capabilities for domain adaptation
+
+## Hardware Optimizations
+
+### Mac M4 Support
+This project is optimized for Mac M4 with MPS (Metal Performance Shaders):
+- ✅ **MPS acceleration**: Automatic GPU detection and utilization
+- ✅ **Large memory support**: Optimized for 32GB+ RAM configurations
+- ✅ **Smart pin memory**: Conditional usage based on device capabilities
+- ✅ **Multi-core DataLoader**: Efficient CPU utilization during training
+
+See `MAC_M4_GPU_OPTIMIZATIONS.md` for detailed performance information and optimization explanations.
