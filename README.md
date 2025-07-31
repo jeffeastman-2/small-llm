@@ -62,7 +62,7 @@ The project includes a comprehensive test suite with **59 tests** covering all c
 # Run all tests (recommended)
 python run_tests.py
 
-# Run specific module
+# Run specific module  
 python run_tests.py --test test_model --quiet
 ```
 
@@ -74,9 +74,9 @@ python run_tests.py --test test_model --quiet
 - **test_data_loader.py**: PDF extraction and processing (11 tests)
 - **test_integration.py**: End-to-end pipeline testing (9 tests)
 
-See [TESTING.md](TESTING.md) for detailed testing documentation.
-
 **Current Status**: ✅ All 59 tests passing
+
+See [TESTING.md](TESTING.md) for detailed testing documentation and advanced usage.
 
 ## Requirements
 
