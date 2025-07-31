@@ -1,4 +1,4 @@
-# Small Language Model (Mini-GPT)
+# Small-LLM
 
 A PyTorch implementation of a small GPT-style transformer model that can be trained on PDF documents and generate text.
 

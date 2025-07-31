@@ -1,1 +1,1 @@
-# Small Language Model Package
+# Small-LLM Package
