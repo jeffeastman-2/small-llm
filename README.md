@@ -25,10 +25,22 @@ Small-LLM/
 │   ├── model.py                 # MiniGPT model implementation
 │   ├── trainer.py               # Training utilities
 │   └── generation.py            # Text generation utilities
+├── tests/                       # Comprehensive test suite
+│   ├── __init__.py
+│   ├── test_tokenizer.py        # Tokenizer tests
+│   ├── test_dataset.py          # Dataset tests
+│   ├── test_model.py            # Model tests
+│   ├── test_generation.py       # Generation tests
+│   ├── test_data_loader.py      # Data loading tests
+│   └── test_integration.py      # Integration tests
 ├── train.py                     # Main training script
 ├── generate.py                  # Interactive text generation
+├── run_tests.py                 # Test runner script
+├── test_with_pytest.py          # Alternative pytest runner
 ├── Training/                    # PDF training documents
 ├── requirements.txt             # Python dependencies
+├── pytest.ini                  # Pytest configuration
+├── TESTING.md                   # Testing documentation
 ├── *.pth                        # Saved model checkpoints
 └── *.pt                         # Vocabulary files
 ```
@@ -40,6 +52,23 @@ Small-LLM/
 - **Number of Heads**: 2
 - **Number of Layers**: 2
 - **Attention**: Causal self-attention with masking
+
+## Testing
+
+The project includes a comprehensive test suite with 50+ tests covering all modules:
+
+```bash
+# Run all tests
+python run_tests.py
+
+# Run specific test module
+python run_tests.py --test test_tokenizer
+
+# Run with pytest (includes coverage)
+python test_with_pytest.py
+```
+
+See [TESTING.md](TESTING.md) for detailed testing documentation.
 
 ## Requirements
 

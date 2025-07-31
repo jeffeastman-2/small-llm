@@ -19,6 +19,9 @@ def sample_top_k(probs: torch.Tensor, k: int = 10) -> int:
     Returns:
         int: Sampled token ID
     """
+    # Ensure k doesn't exceed vocabulary size
+    k = min(k, len(probs))
+    
     topk = torch.topk(probs, k)
     probs_topk = F.softmax(topk.values, dim=-1)
     idx = torch.multinomial(probs_topk, num_samples=1).item()
@@ -100,7 +103,9 @@ def generate(
             if top_p is not None:
                 next_token = sample_top_p(probs, p=top_p)
             else:
-                next_token = sample_top_k(probs, k=top_k)
+                # Ensure top_k doesn't exceed vocabulary size
+                safe_top_k = min(top_k, len(probs))
+                next_token = sample_top_k(probs, k=safe_top_k)
 
         # Add to result and update seed
         result.append(idx2word.get(next_token, "<UNK>"))
