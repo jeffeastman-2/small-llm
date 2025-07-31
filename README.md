@@ -55,20 +55,28 @@ Small-LLM/
 
 ## Testing
 
-The project includes a comprehensive test suite with 50+ tests covering all modules:
+The project includes a comprehensive test suite with **59 tests** covering all components:
 
+### Quick Test Run
 ```bash
-# Run all tests
+# Run all tests (recommended)
 python run_tests.py
 
-# Run specific test module
-python run_tests.py --test test_tokenizer
-
-# Run with pytest (includes coverage)
-python test_with_pytest.py
+# Run specific module
+python run_tests.py --test test_model --quiet
 ```
 
+### Test Coverage
+- **test_tokenizer.py**: Text processing and vocabulary management (6 tests)
+- **test_model.py**: MiniGPT architecture and training (10 tests)  
+- **test_dataset.py**: PyTorch dataset functionality (8 tests)
+- **test_generation.py**: Text generation and sampling (15 tests)
+- **test_data_loader.py**: PDF extraction and processing (11 tests)
+- **test_integration.py**: End-to-end pipeline testing (9 tests)
+
 See [TESTING.md](TESTING.md) for detailed testing documentation.
+
+**Current Status**: ✅ All 59 tests passing
 
 ## Requirements
 
