@@ -4,20 +4,34 @@ A PyTorch implementation of a small GPT-style transformer model that can be trai
 
 ## Features
 
-- **PDF Text Extraction**: Reads and processes multiple PDF files from a training directory
-- **Custom Tokenization**: Simple word-based tokenization with vocabulary building
-- **Mini GPT Architecture**: Multi-layer transformer with self-attention
-- **Training Pipeline**: Complete training loop with early stopping and model checkpointing
-- **Text Generation**: Interactive text generation with top-k sampling
-- **Multiple Inference Options**: Generate from token sequences or string prompts
+- **Modular Architecture**: Clean separation of concerns with dedicated modules
+- **PDF Text Extraction**: Robust multi-file PDF processing with error handling
+- **Advanced Tokenization**: Word-based tokenization with vocabulary management
+- **Modern Transformer**: Pre-norm architecture with causal attention masking
+- **Flexible Training**: Configurable training pipeline with early stopping
+- **Interactive Generation**: Feature-rich text generation with multiple sampling strategies
+- **Multiple Sampling Methods**: Top-k and top-p (nucleus) sampling support
+- **Device Agnostic**: Automatic GPU/MPS detection and fallback to CPU
 
-## Files
+## Project Structure
 
-- `Reading from Trainning Directory3.py` - Main training script
-- `Generate from Best Model.py` - Interactive text generation script
-- `Training/` - Directory containing PDF training documents
-- `*.pth` - Saved model checkpoints
-- `*.pt` - Vocabulary files
+```
+Small-LLM/
+├── src/                          # Source code modules
+│   ├── __init__.py
+│   ├── data_loader.py           # PDF text extraction
+│   ├── tokenizer.py             # Tokenization and vocabulary
+│   ├── dataset.py               # PyTorch dataset
+│   ├── model.py                 # MiniGPT model implementation
+│   ├── trainer.py               # Training utilities
+│   └── generation.py            # Text generation utilities
+├── train.py                     # Main training script
+├── generate.py                  # Interactive text generation
+├── Training/                    # PDF training documents
+├── requirements.txt             # Python dependencies
+├── *.pth                        # Saved model checkpoints
+└── *.pt                         # Vocabulary files
+```
 
 ## Model Architecture
 
@@ -29,6 +43,12 @@ A PyTorch implementation of a small GPT-style transformer model that can be trai
 
 ## Requirements
 
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Or manually install the core dependencies:
 ```bash
 pip install torch PyMuPDF
 ```
@@ -40,15 +60,22 @@ pip install torch PyMuPDF
 1. Place PDF files in the `Training/` directory
 2. Run the training script:
 ```bash
-python "Reading from Trainning Directory3.py"
+python train.py
 ```
 
 ### Generation
 
-After training, use the generation script:
+After training, use the interactive generation script:
 ```bash
-python "Generate from Best Model.py"
+python generate.py
 ```
+
+The generation script provides an interactive interface with commands:
+- Enter any text prompt to generate continuations
+- `help` - Show available commands and settings
+- `config` - Display current generation parameters
+- `set <param> <value>` - Adjust generation settings
+- `quit` or `exit` - Exit the program
 
 ## Training Features
 
@@ -73,26 +100,31 @@ python "Generate from Best Model.py"
 - Learning rate: 1e-4
 - Max epochs: 500 (with early stopping)
 
-## File Structure
+## Module Overview
 
-```
-Small-LLM/
-├── Reading from Trainning Directory3.py  # Training script
-├── Generate from Best Model.py           # Generation script
-├── Training/                             # PDF training data
-│   ├── dissertationPurchase_JEastman_1749111609.pdf
-│   └── Too Early Retrospective.pdf
-├── best_model.pth                        # Best model weights
-├── vocab.pt                              # Training vocabulary
-├── use_model.pth                         # Generation model weights
-└── use_vocab.pt                          # Generation vocabulary
-```
+### Core Modules
+
+- **`data_loader.py`**: PDF text extraction with robust error handling
+- **`tokenizer.py`**: Text tokenization, vocabulary building, and persistence
+- **`dataset.py`**: PyTorch dataset for next-token prediction training
+- **`model.py`**: MiniGPT transformer implementation with modern architecture
+- **`trainer.py`**: Training orchestration with monitoring and checkpointing
+- **`generation.py`**: Text generation with multiple sampling strategies
+
+### Scripts
+
+- **`train.py`**: Complete training pipeline from PDFs to trained model
+- **`generate.py`**: Interactive text generation interface
 
 ## Future Improvements
 
-- [ ] Add BPE tokenization for better subword handling
-- [ ] Implement beam search for generation
-- [ ] Add validation set evaluation
-- [ ] Support for larger context windows
-- [ ] Model architecture experiments (different sizes)
-- [ ] Better text preprocessing and cleaning
+- [ ] Add BPE/SentencePiece tokenization for better subword handling
+- [ ] Implement beam search and other advanced decoding strategies
+- [ ] Add validation set evaluation and perplexity metrics
+- [ ] Support for larger context windows and streaming attention
+- [ ] Model architecture experiments (different sizes, attention variants)
+- [ ] Better text preprocessing and document structure preservation
+- [ ] Multi-GPU training support
+- [ ] Model quantization and optimization for inference
+- [ ] Web interface for text generation
+- [ ] Fine-tuning capabilities for domain adaptation
