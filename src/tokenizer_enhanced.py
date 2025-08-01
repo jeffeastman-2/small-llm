@@ -273,3 +273,19 @@ def load_vocab(vocab_path: str) -> Tuple[Dict[str, int], Dict[int, str]]:
     """Load vocabulary (backward compatibility)."""
     data = torch.load(vocab_path, weights_only=False)
     return data['word2idx'], data['idx2word']
+
+
+def load_tokenizer(vocab_path: str):
+    """Load the appropriate tokenizer based on the vocab file."""
+    data = torch.load(vocab_path, weights_only=False)
+    
+    if data.get('tokenizer_type') == 'bpe':
+        # Load BPE tokenizer
+        tokenizer = BPETokenizer()
+        tokenizer.load(vocab_path)
+        return tokenizer
+    else:
+        # Load word tokenizer
+        tokenizer = WordTokenizer() 
+        tokenizer.load(vocab_path)
+        return tokenizer

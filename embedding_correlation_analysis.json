@@ -1,0 +1,1598 @@
+{
+  "metadata": {
+    "description": "Small-LLM vs ENGRAF embedding correlation analysis",
+    "model_performance": "loss 0.0020 train/0.0017 validation",
+    "words_analyzed": 50,
+    "smallllm_dimensions": 512,
+    "engraf_dimensions": 46,
+    "analysis_date": "2025-08-01"
+  },
+  "words_analyzed": [
+    "cube",
+    "box",
+    "sphere",
+    "ellipsoid",
+    "arch",
+    "table",
+    "object",
+    "square",
+    "rectangle",
+    "triangle",
+    "circle",
+    "cylinder",
+    "cone",
+    "tetrahedron",
+    "hexahedron",
+    "octahedron",
+    "dodecahedron",
+    "icosahedron",
+    "pyramid",
+    "prism",
+    "degree",
+    "unit",
+    "pixel",
+    "meter",
+    "inch",
+    "foot",
+    "yard",
+    "it",
+    "they",
+    "them",
+    "red",
+    "green",
+    "blue",
+    "yellow",
+    "purple",
+    "orange",
+    "black",
+    "white",
+    "gray",
+    "brown",
+    "large",
+    "big",
+    "huge",
+    "small",
+    "tiny",
+    "tall",
+    "short",
+    "wide",
+    "deep",
+    "rough"
+  ],
+  "smallllm_embedding_stats": {
+    "mean_stats": {
+      "overall_mean": 0.00034290674375370145,
+      "overall_std": 0.0015488375211134553
+    }
+  },
+  "dimension_correlations": [
+    {
+      "dimension": "noun",
+      "best_correlation": -0.40276865855639765,
+      "best_stat": "max",
+      "p_value": 0.05,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.1900917273462696,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": -0.3532395114345784,
+          "p_value": 0.05
+        },
+        "max": {
+          "correlation": -0.40276865855639765,
+          "p_value": 0.05
+        },
+        "min": {
+          "correlation": 0.39175752475535874,
+          "p_value": 0.05
+        },
+        "l2_norm": {
+          "correlation": -0.3532037305447805,
+          "p_value": 0.05
+        }
+      },
+      "engraf_mean": 0.54,
+      "engraf_std": 0.49839743177508455,
+      "engraf_active_words": 27
+    },
+    {
+      "dimension": "pronoun",
+      "best_correlation": 0.3273120572109337,
+      "best_stat": "max",
+      "p_value": 0.05,
+      "all_correlations": {
+        "mean": {
+          "correlation": -0.22758867825467965,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": 0.2914065253593203,
+          "p_value": 0.05
+        },
+        "max": {
+          "correlation": 0.3273120572109337,
+          "p_value": 0.05
+        },
+        "min": {
+          "correlation": -0.29888804264246543,
+          "p_value": 0.05
+        },
+        "l2_norm": {
+          "correlation": 0.2915277706108183,
+          "p_value": 0.05
+        }
+      },
+      "engraf_mean": 0.06,
+      "engraf_std": 0.23748684174075835,
+      "engraf_active_words": 3
+    },
+    {
+      "dimension": "singular",
+      "best_correlation": 0.28040957385891024,
+      "best_stat": "max",
+      "p_value": 0.05,
+      "all_correlations": {
+        "mean": {
+          "correlation": -0.009234922398381105,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": 0.27076653199646766,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": 0.28040957385891024,
+          "p_value": 0.05
+        },
+        "min": {
+          "correlation": -0.2272249175367947,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": 0.2704852323058427,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.02,
+      "engraf_std": 0.13999999999999999,
+      "engraf_active_words": 1
+    },
+    {
+      "dimension": "red",
+      "best_correlation": -0.27317382003690965,
+      "best_stat": "mean",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": -0.27317382003690965,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": -0.03143907733560942,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": -0.14106300563035382,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": 0.10936073194350747,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": -0.03142705805624421,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.11199999999999999,
+      "engraf_std": 0.2909570415026933,
+      "engraf_active_words": 7
+    },
+    {
+      "dimension": "plural",
+      "best_correlation": -0.2692215155948195,
+      "best_stat": "mean",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": -0.2692215155948195,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": 0.15971643167183758,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": 0.19634174068193538,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": -0.199891063748538,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": 0.16006434141887113,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.04,
+      "engraf_std": 0.19595917942265428,
+      "engraf_active_words": 2
+    },
+    {
+      "dimension": "adj",
+      "best_correlation": -0.25366296654543413,
+      "best_stat": "min",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": -0.08306201815358005,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": 0.21810348511368358,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": 0.2510860856954355,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": -0.25366296654543413,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": 0.21800830762707923,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.4,
+      "engraf_std": 0.4898979485566356,
+      "engraf_active_words": 20
+    },
+    {
+      "dimension": "number",
+      "best_correlation": 0.24335084473709243,
+      "best_stat": "mean",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.24335084473709243,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": 0.14809671889137815,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": 0.12819162158036673,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": -0.08626211941519286,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": 0.14827700187841908,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.14,
+      "engraf_std": 0.3469870314579494,
+      "engraf_active_words": 7
+    },
+    {
+      "dimension": "unit",
+      "best_correlation": 0.24335084473709243,
+      "best_stat": "mean",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.24335084473709243,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": 0.14809671889137815,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": 0.12819162158036673,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": -0.08626211941519286,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": 0.14827700187841908,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.14,
+      "engraf_std": 0.3469870314579494,
+      "engraf_active_words": 7
+    },
+    {
+      "dimension": "blue",
+      "best_correlation": 0.18302088526611954,
+      "best_stat": "mean",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.18302088526611954,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": 0.04653944307431767,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": 0.032258499068823304,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": -0.037572644794689476,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": 0.04664664698085289,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.062,
+      "engraf_std": 0.21530443562546495,
+      "engraf_active_words": 4
+    },
+    {
+      "dimension": "green",
+      "best_correlation": 0.14111620835009359,
+      "best_stat": "min",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": -0.08720102814907756,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": -0.09241238396019531,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": -0.10919839992998825,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": 0.14111620835009359,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": -0.09259280460118831,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.086,
+      "engraf_std": 0.2537794317906792,
+      "engraf_active_words": 6
+    },
+    {
+      "dimension": "scaleX",
+      "best_correlation": -0.1314708215678265,
+      "best_stat": "mean",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": -0.1314708215678265,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": -0.0622367041221438,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": -0.05294144963880007,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": 0.0694652933462452,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": -0.06248217750287502,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.146,
+      "engraf_std": 0.6152105330697777,
+      "engraf_active_words": 4
+    },
+    {
+      "dimension": "scaleZ",
+      "best_correlation": -0.0957014639689115,
+      "best_stat": "min",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": -0.050346051030723246,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": 0.08703031335397513,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": 0.05097864803058564,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": -0.0957014639689115,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": 0.08668790574604018,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.146,
+      "engraf_std": 0.6152105330697777,
+      "engraf_active_words": 4
+    },
+    {
+      "dimension": "scaleY",
+      "best_correlation": -0.09082100649220319,
+      "best_stat": "mean",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": -0.09082100649220319,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": -0.0244120251435871,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": -0.015297550756901047,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": 0.02008614862048245,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": -0.024696399960613083,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.136,
+      "engraf_std": 0.621533587185761,
+      "engraf_active_words": 4
+    },
+    {
+      "dimension": "texture",
+      "best_correlation": -0.05736409172983662,
+      "best_stat": "min",
+      "p_value": 0.1,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.05334369120615797,
+          "p_value": 0.1
+        },
+        "std": {
+          "correlation": -0.023917111590745832,
+          "p_value": 0.1
+        },
+        "max": {
+          "correlation": 0.035487512231296835,
+          "p_value": 0.1
+        },
+        "min": {
+          "correlation": -0.05736409172983662,
+          "p_value": 0.1
+        },
+        "l2_norm": {
+          "correlation": -0.023979423726382437,
+          "p_value": 0.1
+        }
+      },
+      "engraf_mean": 0.04,
+      "engraf_std": 0.27999999999999997,
+      "engraf_active_words": 1
+    },
+    {
+      "dimension": "verb",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "tobe",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "action",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "prep",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "det",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "def",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "adv",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "vector",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "conj",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "disj",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "tobe",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "comp",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "locX",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "locY",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "locZ",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "rotX",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "rotY",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "rotZ",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "transparency",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "quoted",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "create",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "transform",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "style",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "organize",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "edit",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "select",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "spatial_vertical",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "spatial_proximity",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "directional_target",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "directional_agency",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "relational_possession",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    },
+    {
+      "dimension": "relational_comparison",
+      "best_correlation": 0.0,
+      "best_stat": "mean",
+      "p_value": 1.0,
+      "all_correlations": {
+        "mean": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "std": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "max": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "min": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        },
+        "l2_norm": {
+          "correlation": 0.0,
+          "p_value": 1.0
+        }
+      },
+      "engraf_mean": 0.0,
+      "engraf_std": 0.0,
+      "engraf_active_words": 0
+    }
+  ],
+  "semantic_categories": {
+    "linguistic": {
+      "words": [
+        "cube",
+        "box",
+        "sphere",
+        "ellipsoid",
+        "arch",
+        "table",
+        "object",
+        "square",
+        "rectangle",
+        "triangle",
+        "circle",
+        "cylinder",
+        "cone",
+        "tetrahedron",
+        "hexahedron",
+        "octahedron",
+        "dodecahedron",
+        "icosahedron",
+        "pyramid",
+        "prism",
+        "degree",
+        "unit",
+        "pixel",
+        "meter",
+        "inch",
+        "foot",
+        "yard",
+        "it",
+        "they",
+        "them",
+        "red",
+        "green",
+        "blue",
+        "yellow",
+        "purple",
+        "orange",
+        "black",
+        "white",
+        "gray",
+        "brown",
+        "large",
+        "big",
+        "huge",
+        "small",
+        "tiny",
+        "tall",
+        "short",
+        "wide",
+        "deep",
+        "rough"
+      ],
+      "count": 50,
+      "avg_activity": 1.0
+    },
+    "spatial": {
+      "words": [
+        "large",
+        "big",
+        "huge",
+        "tall",
+        "wide",
+        "deep"
+      ],
+      "count": 6,
+      "avg_activity": 4.25
+    },
+    "visual": {
+      "words": [
+        "red",
+        "green",
+        "blue",
+        "yellow",
+        "purple",
+        "orange",
+        "white",
+        "gray",
+        "brown",
+        "rough"
+      ],
+      "count": 10,
+      "avg_activity": 1.5
+    },
+    "grammar": {
+      "words": [
+        "degree",
+        "unit",
+        "pixel",
+        "meter",
+        "inch",
+        "foot",
+        "yard",
+        "it",
+        "they",
+        "them"
+      ],
+      "count": 10,
+      "avg_activity": 1.7
+    }
+  }
+}
